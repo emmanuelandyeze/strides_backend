@@ -3,6 +3,10 @@ import { v4 } from 'uuid';
 const port = process.env.PORT || 5000
 const app = express()
 
+app.get('/', (req, res) => {
+	res.send('Express on Vercel');
+});
+
 app.get('/api', (req, res) => {
 	const path = `/api/item/${v4()}`;
 	res.setHeader('Content-Type', 'text/html');
